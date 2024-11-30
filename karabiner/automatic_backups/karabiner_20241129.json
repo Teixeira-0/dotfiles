@@ -1,0 +1,161 @@
+{
+    "global": { "show_in_menu_bar": false },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Change fn to Shift + Option",
+                        "manipulators": [
+                            {
+                                "description": "Remap fn to Shift + Option",
+                                "from": {
+                                    "key_code": "fn",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Open Hotkeys",
+                        "manipulators": [
+                            {
+                                "description": "Open Safari with Caps Lock + f",
+                                "from": {
+                                    "modifiers": { "mandatory": ["left_shift", "left_command", "left_control", "left_option"] },
+                                    "simultaneous": [{ "key_code": "f" }],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse"
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -a Finder" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Open Safari with Caps Lock + s",
+                                "from": {
+                                    "modifiers": { "mandatory": ["left_shift", "left_command", "left_control", "left_option"] },
+                                    "simultaneous": [{ "key_code": "s" }],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse"
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -a Safari" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Open iTerm with Caps Lock + t",
+                                "from": {
+                                    "modifiers": { "mandatory": ["left_shift", "left_command", "left_control", "left_option"] },
+                                    "simultaneous": [{ "key_code": "t" }],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse"
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -a iTerm" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Open Discord with Caps Lock + d",
+                                "from": {
+                                    "modifiers": { "mandatory": ["left_shift", "left_command", "left_control", "left_option"] },
+                                    "simultaneous": [{ "key_code": "d" }],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse"
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -a Discord" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Open Notion with Caps Lock + n",
+                                "from": {
+                                    "modifiers": { "mandatory": ["left_shift", "left_command", "left_control", "left_option"] },
+                                    "simultaneous": [{ "key_code": "n" }],
+                                    "simultaneous_options": {
+                                        "key_down_order": "strict",
+                                        "key_up_order": "strict_inverse"
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -a Notion" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "CAPS_LOCK to HYPER (SHIFT+COMMAND+OPTION+CONTROL) or ESCAPE (If Alone)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Hyper + Delete to Forward Delete",
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
+                                },
+                                "to": [{ "key_code": "delete_forward" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
+                                },
+                                "to": [],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
+                                },
+                                "to": [],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
+                                    "key_code": "slash",
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
+                                },
+                                "to": [],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "name": "0x3ira",
+            "selected": true,
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "keyboard_type": "ansi",
+                "keyboard_type_v2": "ansi"
+            }
+        }
+    ]
+}
